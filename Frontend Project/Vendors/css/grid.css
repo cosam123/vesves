@@ -1,0 +1,62 @@
+/* Responsive Grid System - Single File Version */
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+[class*="span-"] {
+    flex: 1;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Column Widths */
+.span-1-of-12 { flex-basis: 8.33%; }
+.span-2-of-12 { flex-basis: 16.66%; }
+.span-3-of-12 { flex-basis: 25%; }
+.span-4-of-12 { flex-basis: 33.33%; }
+.span-5-of-12 { flex-basis: 41.66%; }
+.span-6-of-12 { flex-basis: 50%; }
+.span-7-of-12 { flex-basis: 58.33%; }
+.span-8-of-12 { flex-basis: 66.66%; }
+.span-9-of-12 { flex-basis: 75%; }
+.span-10-of-12 { flex-basis: 83.33%; }
+.span-11-of-12 { flex-basis: 91.66%; }
+.span-12-of-12 { flex-basis: 100%; }
+
+/* Additional Column Widths */
+.span-1-of-4 { flex-basis: 25%; }
+.span-2-of-4 { flex-basis: 50%; }
+.span-3-of-4 { flex-basis: 75%; }
+.span-4-of-4 { flex-basis: 100%; }
+
+.span-1-of-3 { flex-basis: 33.33%; }
+.span-2-of-3 { flex-basis: 66.66%; }
+.span-3-of-3 { flex-basis: 100%; }
+
+.span-1-of-2 { flex-basis: 50%; }
+.span-2-of-2 { flex-basis: 100%; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: row;
+        justify-content: center;
+    }
+    .span-1-of-4, .span-2-of-4, .span-3-of-4, .span-1-of-3, .span-2-of-3, .span-1-of-2 {
+        flex-basis: 50%; /* Keep two columns per row where possible */
+    }
+    .span-4-of-4, .span-3-of-3, .span-2-of-2, .span-12-of-12 {
+        flex-basis: 100%; /* Full width when necessary */
+    }
+}
